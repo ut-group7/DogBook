@@ -4,8 +4,9 @@ const Nav = () => {
   return (
     <nav>
       <h2>Dogs</h2>
-      <a href="/lost">Lost Dogs</a>
-      <a href="/found">Found/Shelter Dogs</a>
+      <a href="/postLost">Lost Dogs</a>
+      <a href="/">Home</a>
+
     </nav>
   );
 };

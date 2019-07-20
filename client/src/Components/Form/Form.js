@@ -24,10 +24,10 @@ const Form = function Form() {
   return (
     <div>
       <form>
-        <p>Task: {name}</p>
+        <p>Dog Information: {name}</p>
         <input
           type="text"
-          placeholder="Your Task"
+          placeholder="Dog"
           name="name"
           value={name}
           onChange={handleInputChange}
