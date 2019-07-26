@@ -1,40 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Form = function Form() {
-  const [name, setname] = useState("");
-
-  const handleTaskSubmit = event => {
-    event.preventDefault();
-    // axios call to api
-    alert(`${name}`);
-  };
-
-  const handleInputChange = event => {
-    const { name, value } = event.target;
-
-    switch (name) {
-      case "name":
-        setname(value);
-        break;
-      default:
-        break;
-    }
-  };
-
+const Form = props => {
   return (
-    <div>
-      <form>
-        <p>Dog Information: {name}</p>
-        <input
-          type="text"
-          placeholder="Dog"
-          name="name"
-          value={name}
-          onChange={handleInputChange}
-        />
-        <button onClick={event => handleTaskSubmit(event)}>Submit</button>
-      </form>
-    </div>
+    <form>
+      <input
+        type="text"
+        placeholder="Dog breed or physical description"
+        name="dogBreed"
+        value={props.dogBreed}
+        onChange={props.change}
+      />
+      <button type="submit" onClick={props.submit}>
+        Submit
+      </button>
+    </form>
   );
 };
 
