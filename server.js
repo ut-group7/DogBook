@@ -92,6 +92,22 @@ Todo.findByIdAndRemove(req.params.todoId, (err, todo) => {
 });
 
 
+//post seen dog breed or description. 
+app.post("/api/seen/data", function(req, res){
+  db.SeenDog.create(req.body) 
+      .then(dbDog => res.json(dbDog))
+      .catch(err => res.json(err));
+});
+
+//locate seen dogs
+app.get("/api/seen/data", function(req, res) {
+  db.SeenDog.find({})
+    .then(dbDog => {
+      res.json(dbDog);
+    })
+    .catch(err => res.json(err));
+});
+
 
 app.use(express.errorHandler());
 
