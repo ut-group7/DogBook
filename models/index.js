@@ -1,3 +1,4 @@
 module.exports = {
-    LostDog: require("./lostDog")
+    LostDog: require("./lostDog"),
+    SeenDog: require("./seenDog")
 };
