@@ -59,7 +59,7 @@ const Post = function Post () {
           <h2>Lost Dogs</h2>
           <ul>
             {data.map(item => (
-              <li>{item.dogBreed}</li>
+              <li id={item._id}>{item.dogBreed}</li>
             ))}
           </ul>
         </div>

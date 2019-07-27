@@ -57,6 +57,40 @@ app.post("/api/data", function(req, res){
         .catch(err => res.json(err));
 });
 
+//delete dog with unique mongo id
+// app.delete("/api/data/:id", function(req, res) {
+//   db.LostDog.findByIdAndRemove({ _id: req.params.id })
+//     .then(dbDog => {
+//       res.json(dbDog);
+//     })
+//     .catch(err => res.json(err));
+// });
+
+app.delete("/api/data/:id", function(req, res) {
+  db.LostDog.findByIdAndRemove(req.params.id, (err, lostDog) => {
+    if (err) return res.status(500).send(err);
+    
+  })
+    .then(dbDog => {
+      res.json(dbDog);
+    })
+    .catch(err => res.json(err));
+});
+
+// The "todo" in this callback function represents the document that was found.
+// It allows you to pass a reference back to the client in case they need a reference for some reason.
+Todo.findByIdAndRemove(req.params.todoId, (err, todo) => {
+  // As always, handle any potential errors:
+  if (err) return res.status(500).send(err);
+  // We'll create a simple object to send back with a message and the id of the document that was removed
+  // You can really do this however you want, though.
+  const response = {
+      message: "Todo successfully deleted",
+      id: todo._id
+  };
+  return res.status(200).send(response);
+});
+
 
 
 app.use(express.errorHandler());
