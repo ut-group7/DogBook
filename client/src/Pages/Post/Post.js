@@ -32,17 +32,25 @@ const Post = function Post () {
         }
     } 
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await fetch(
-            "http://localhost:3030/api/data"
-            )
-        const json = await result.json();
-        console.log(json);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const result = await fetch(
+    //         "http://localhost:3030/api/data"
+    //         )
+    //     const json = await result.json();
+    //     console.log(json);
+    //     setData(json);
+    //     };
+    //     fetchData();
+    // }, []);
+
+    const fetchData = async () => {
+        const response = await fetch(`http://localhost:3030/api/data`)
+        const json = await response.json();
         setData(json);
-        };
-        fetchData();
-    }, []);
+      };
+      
+      useEffect( () => { fetchData(data) }, [ data ] );
 
     return (
       <div>
