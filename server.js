@@ -73,18 +73,6 @@ app.delete("/api/data/:id", function(req, res) {
   .catch(err => res.status(422).json(err))
 });
 
-// app.delete("/api/data/:id", function(req, res) {
-//   db.LostDog.findByIdAndRemove(req.params.id, (err, lostDog) => {
-//     if (err) return res.status(500).send(err);
-//     const response = {
-//       message: "dog entry successfully deleted",
-//       id: lostDog._id
-//     };
-//     return res.status(200).send(response);
-//   })
-// });
-
-
 
 
 //post seen dog breed or description. 
@@ -101,6 +89,15 @@ app.get("/api/seen/data", function(req, res) {
       res.json(dbDog);
     })
     .catch(err => res.json(err));
+});
+
+//delete seen dogs
+app.delete("/api/seen/data/:id", function(req, res) {
+  db.SeenDog
+  .findById({ _id: req.params.id })
+  .then(dbDog => dbDog.remove())
+  .then(dbDog => res.json(dbDog))
+  .catch(err => res.status(422).json(err))
 });
 
 

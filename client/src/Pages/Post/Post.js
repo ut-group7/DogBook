@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Form from "../../Components/Form/Form";
+import DeleteBtn from "../../Components/DeleteBtn/DeleteBtn";
 
 
 const Post = function Post () {
@@ -32,11 +33,22 @@ const Post = function Post () {
         }
     } 
 
-    // const deleteDog = event => {
-    //     event.preventDefault();
-    //     const input = this.id;
-    //     fetch("http://localhost:3030/api/data/:id")
-    // }
+
+    const deleteDog = id => {
+        const options = {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        };
+        fetch("http://localhost:3030/api/data/" + id, options)
+          .then(res => res.json()
+          .then(fetchData(data))
+          .then(res => console.log(res)))
+          .catch(err => {
+            console.log("request failed" + err);
+          });
+      };
 
   
 
@@ -56,7 +68,9 @@ const Post = function Post () {
           <h2>Lost Dogs</h2>
           <ul>
             {data.map(item => (
-              <li key={item._id} id={item._id}>{item.dogBreed}<button>Remove {item.dogBreed} </button></li>
+              <li key={item._id} id={item._id}>{item.dogBreed}
+              <DeleteBtn onClick={()=> deleteDog(item._id)}/>
+              </li>
             ))}
           </ul>
           
