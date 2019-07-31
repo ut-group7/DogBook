@@ -17,7 +17,7 @@ const Post = function Post () {
         };
         fetch("http://localhost:3030/api/data", options)
         .then(res => res.json())
-        .then(res => console.log(res))
+        .then(res => setData([...data, res]))
         .catch(err=> console.log("request failed" + err));
     }
 
@@ -32,17 +32,13 @@ const Post = function Post () {
         }
     } 
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const result = await fetch(
-    //         "http://localhost:3030/api/data"
-    //         )
-    //     const json = await result.json();
-    //     console.log(json);
-    //     setData(json);
-    //     };
-    //     fetchData();
-    // }, []);
+    // const deleteDog = event => {
+    //     event.preventDefault();
+    //     const input = this.id;
+    //     fetch("http://localhost:3030/api/data/:id")
+    // }
+
+  
 
     const fetchData = async () => {
         const response = await fetch(`http://localhost:3030/api/data`)
@@ -50,20 +46,23 @@ const Post = function Post () {
         setData(json);
       };
       
-      useEffect( () => { fetchData(data) }, [ data ] );
+      useEffect( () => { fetchData(data) }, [] );
 
     return (
       <div>
+          
         <Form change={handleInputChange} submit={handleSubmit} />
         <div>
           <h2>Lost Dogs</h2>
           <ul>
             {data.map(item => (
-              <li id={item._id}>{item.dogBreed}</li>
+              <li key={item._id} id={item._id}>{item.dogBreed}<button>Remove {item.dogBreed} </button></li>
             ))}
           </ul>
+          
         </div>
       </div>
+      
     );
 };
 

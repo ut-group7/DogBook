@@ -17,6 +17,7 @@ const SeenPost = function SeenPost () {
         };
         fetch("http://localhost:3030/api/seen/data", options)
         .then(res => res.json())
+        .then(res => setData([...data, res]))
         .then(res => console.log(res))
         .catch(err=> console.log("request failed" + err));
     }
@@ -32,25 +33,15 @@ const SeenPost = function SeenPost () {
         }
     } 
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const result = await fetch(
-    //         "http://localhost:3030/api/data"
-    //         )
-    //     const json = await result.json();
-    //     console.log(json);
-    //     setData(json);
-    //     };
-    //     fetchData();
-    // }, []);
-
+    
+    //loading initial data, works similiarly to componentDidMount
     const fetchData = async () => {
         const response = await fetch(`http://localhost:3030/api/seen/data`)
         const json = await response.json();
         setData(json);
       };
       
-      useEffect( () => { fetchData(data) }, [ data ] );
+      useEffect( () => { fetchData(data) }, [] );
 
     return (
       <div>
@@ -59,7 +50,7 @@ const SeenPost = function SeenPost () {
           <h2>Seen Dogs</h2>
           <ul>
             {data.map(item => (
-              <li>{item.dogBreed}</li>
+              <li key={item._id}>{item.dogBreed}</li>
             ))}
           </ul>
         </div>
