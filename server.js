@@ -49,6 +49,13 @@ app.get("/api/data", function(req, res) {
     .catch(err => res.json(err));
 });
 
+//find unique dog
+app.get("/api/data/:id", function (req, res){
+  db.LostDog.find({ _id: req.params.id })
+    .then(dbDog => res.json(dbDog))
+    .catch(err => res.json(err));
+});
+
 
 //post lost dog breed or description. 
 app.post("/api/data", function(req, res){
@@ -56,6 +63,16 @@ app.post("/api/data", function(req, res){
         .then(dbDog => res.json(dbDog))
         .catch(err => res.json(err));
 });
+
+// delete dog with unique mongo id
+app.delete("/api/data/:id", function(req, res) {
+  db.LostDog
+  .findById({ _id: req.params.id })
+  .then(dbDog => dbDog.remove())
+  .then(dbDog => res.json(dbDog))
+  .catch(err => res.status(422).json(err))
+});
+
 
 
 //post seen dog breed or description. 
@@ -72,6 +89,15 @@ app.get("/api/seen/data", function(req, res) {
       res.json(dbDog);
     })
     .catch(err => res.json(err));
+});
+
+//delete seen dogs
+app.delete("/api/seen/data/:id", function(req, res) {
+  db.SeenDog
+  .findById({ _id: req.params.id })
+  .then(dbDog => dbDog.remove())
+  .then(dbDog => res.json(dbDog))
+  .catch(err => res.status(422).json(err))
 });
 
 
