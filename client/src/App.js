@@ -1,4 +1,8 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import Navbar from "./Components/Nav/Navbar";
+import Footer from "./Components/Nav/Footer";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from "./Pages/Main/Main";
 import Post from "./Pages/Post/Post";

@@ -10,11 +10,13 @@ const Navbar = props => {
        <div>
           <img src={logo} className='App-logo' width="45" height="45" alt='logo' />
        </div>
-    <a className="navbar-brand ml-5 font-weight-bold" href="">Canine Connection</a>
-    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
+    <a className="navbar-brand ml-5 font-weight-bold" href="#">Canine Connection</a>
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span>
+          <i className="fas fa-bars" style={{ color: '#fff' }} />
+        </span>
     </button>
-    <div className="collapse navbar-collapse" id="navbarToggleExternalContent">
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav m-auto">
         <li className="nav-item active">
             <a className="nav-link text-uppercase ml-5" href="/">Home&nbsp;<i className="fas fa-home"></i> <span className="sr-only">(current)</span></a>     
