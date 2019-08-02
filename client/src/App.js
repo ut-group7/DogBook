@@ -8,6 +8,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "./Components/Nav/Navbar";
 import Footer from "./Components/Nav/Footer";
 
+import {connect} from 'react-redux';
+
 
 
 function App() {
@@ -29,4 +31,8 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = ({users}) => ({
+  users,
+});
+
+export default connect(mapStateToProps)(App);

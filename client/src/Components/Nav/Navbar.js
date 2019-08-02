@@ -1,9 +1,10 @@
 import React from "react";
 import logo from '../Nav/logo.png';
+import { connect } from "react-redux";
 
 
 
-const Navbar = () => {
+const Navbar = props => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
        <div>
@@ -34,4 +35,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default connect(state=>({ name: state.users.name}))(Navbar);

@@ -1,4 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
+import {users} from "../../reducers/users"
+import actions from "../../actions";
+import { getRandomDog } from "../../store";
 
 const Form = props => {
   return (

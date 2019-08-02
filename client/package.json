@@ -7,8 +7,10 @@
     "mdbreact": "^4.18.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
     "react-scripts": "3.0.1",
     "reactstrap": "^8.0.1",
+    "redux-starter-kit": "^0.6.3",
     "styled-components": "^4.3.2"
   },
   "scripts": {
