@@ -9,8 +9,6 @@ import Post from "./Pages/Post/Post";
 import SeenPost from "./Pages/Post/SeenPost";
 import Wrapper from "./Components/Wrapper/Wrapper";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Navbar from "./Components/Nav/Navbar";
-import Footer from "./Components/Nav/Footer";
 
 import {connect} from 'react-redux';
 
