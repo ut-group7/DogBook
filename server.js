@@ -9,6 +9,8 @@ const service = require("feathers-mongoose");
 const Model = require("./models/lostDog");
 const db = require("./models/index");
 
+require('dotenv').config()
+
 mongoose.Promise = global.Promise;
 
 mongoose.connect("mongodb://localhost:27017/snoopDog", {
