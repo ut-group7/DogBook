@@ -8,6 +8,10 @@ import Main from "./Pages/Main/Main";
 import Post from "./Pages/Post/Post";
 import SeenPost from "./Pages/Post/SeenPost";
 import Wrapper from "./Components/Wrapper/Wrapper";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+import {connect} from 'react-redux';
+
 
 
 function App() {
@@ -29,4 +33,8 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = ({users}) => ({
+  users,
+});
+
+export default connect(mapStateToProps)(App);
