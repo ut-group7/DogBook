@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
 import Form from "../../Components/Form/Form";
 import DeleteBtn from "../../Components/DeleteBtn/DeleteBtn";
-
+import imageUrl from '../Content/lost-dog.jpg';
+import './SeenPost.css';
 
 const Post = function Post () {
 
@@ -61,21 +62,21 @@ const Post = function Post () {
       useEffect( () => { fetchData(data) }, [] );
 
     return (
-      <div>
-          
-        <Form change={handleInputChange} submit={handleSubmit} />
-        <div>
-          <h2>Lost Dogs</h2>
-          <ul>
-            {data.map(item => (
-              <li key={item._id} id={item._id}>{item.dogBreed}
-              <DeleteBtn onClick={()=> deleteDog(item._id)}/>
-              </li>
-            ))}
-          </ul>
-          
+      <div className='Seen-page' style={{backgroundImage: `url(${imageUrl})` }}>
+        <div className="App-content">
+          <Form change={handleInputChange} submit={handleSubmit} />
+          <div>
+            <h2>Lost Dogs</h2>
+            <ul>
+              {data.map(item => (
+                <li key={item._id} id={item._id}>{item.dogBreed}
+                <DeleteBtn onClick={()=> deleteDog(item._id)}/>
+                </li>
+              ))}
+           </ul>
+          </div>
+          </div>
         </div>
-      </div>
       
     );
 };
