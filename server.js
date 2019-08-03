@@ -2,6 +2,8 @@ const feathers = require("@feathersjs/feathers");
 const express = require("@feathersjs/express");
 const socketio = require("@feathersjs/socketio");
 const cors = require("cors");
+const passport = require('passport');
+const Strategy = require('passport-google-oauth20').Strategy;
 
 const mongoose = require("mongoose");
 const service = require("feathers-mongoose");
@@ -104,6 +106,32 @@ app.delete("/api/seen/data/:id", function(req, res) {
 
 
 app.use(express.errorHandler());
+
+//======================================================
+//Authentication
+//======================================================
+
+passport.use(new Strategy({
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: "http://localhost:3030/auth/google/redirect"
+},
+function(accessToken, refreshToken, profile, cb) {
+  console.log('callback function fired')
+}
+));
+
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile'] })
+  );
+
+app.get('/auth/google/redirect', 
+  passport.authenticate('google', { failureRedirect: '/' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+
 
 const port = 3030;
 app.listen(port, () => {
