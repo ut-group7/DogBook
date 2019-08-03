@@ -52,6 +52,16 @@ const LostDogs = function Post() {
                         <td>{item.dogBreed}</td>
                         <th>Contact Name: </th>
                         <td>{item.contactName}</td>
+                        <th>Contact Number: </th>
+                        <td>{item.contactNumber}</td>
+                        <th>Approximate Dog Size: </th>
+                        <td>{item.dogSize}</td>
+                        <th>Dog Color: </th>
+                        <td>{item.dogColor}</td>
+                        <th>Reward: </th>
+                        <td>{item.reward}</td>
+                        <th>Notes: </th>
+                        <td>{item.notes}</td>
                     </tr>
                 </tbody>
             </table>  

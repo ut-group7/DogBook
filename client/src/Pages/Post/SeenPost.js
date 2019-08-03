@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Form from "../../Components/Form/Form";
 import DeleteBtn from "../../Components/DeleteBtn/DeleteBtn";
+import imageUrl from '../Content/seen-dog.png';
+import './SeenPost.css';
 
 const SeenPost = function SeenPost() {
   const [dogBreed, setDogBreed] = useState("");
@@ -63,7 +65,8 @@ const SeenPost = function SeenPost() {
   }, []);
 
   return (
-    <div>
+    <div className='Seen-page' style={{backgroundImage: `url(${imageUrl})` }}>
+      <div className="App-content">
       <Form change={handleInputChange} submit={handleSubmit} />
       <div>
         <h2>Seen Dogs</h2>
@@ -75,6 +78,7 @@ const SeenPost = function SeenPost() {
             </li>
           ))}
         </ul>
+      </div>
       </div>
     </div>
   );

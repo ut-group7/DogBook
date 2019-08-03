@@ -1,20 +1,30 @@
 import React, { useState } from "react";
 import Form from "../../Components/Form/Form";
-
+import imageUrl from "../Content/lost-dog.jpg";
+import "./SeenPost.css";
 
 const Post = function Post() {
   const [dogBreed, setDogBreed] = useState("");
   const [contactName, setContactName] = useState("");
   const [contactNumber, setContactNumber] = useState("");
   const [dogSize, setDogSize] = useState("");
-
+  const [reward, setReward] = useState("");
+  const [notes, setNotes] = useState("");
+  const [dogColor, setDogColor] = useState("");
 
   const [data, setData] = useState([]);
 
-
   const handleSubmit = event => {
     event.preventDefault();
-    const input = { dogBreed: dogBreed, contactName: contactName, contactNumber: contactNumber, dogSize: dogSize };
+    const input = {
+      dogBreed: dogBreed,
+      contactName: contactName,
+      contactNumber: contactNumber,
+      dogSize: dogSize,
+      reward: reward,
+      notes: notes,
+      dogColor: dogColor
+    };
     const options = {
       headers: { "Content-Type": "application/json" },
       method: "POST",
@@ -35,25 +45,31 @@ const Post = function Post() {
       case "contactName":
         setContactName(value);
         break;
-        case "contactNumber":
+      case "contactNumber":
         setContactNumber(value);
         break;
-        case "dogSize":
+      case "dogSize":
         setDogSize(value);
+        break;
+      case "reward":
+        setReward(value);
+        break;
+      case "notes":
+        setNotes(value);
+        break;
+      case "dogColor":
+        setNotes(value);
         break;
       default:
         break;
     }
   };
 
-
-
-
   return (
-    <div>
-      <div>
+    <div className="Seen-page" style={{ backgroundImage: `url(${imageUrl})` }}>
+      <div className="App-content">
         <h2>Lost Dogs</h2>
-        <Form change={handleInputChange} submit={handleSubmit} /> 
+        <Form change={handleInputChange} submit={handleSubmit} />
         <a href="/Lost">Back to lost dogs</a>
       </div>
     </div>

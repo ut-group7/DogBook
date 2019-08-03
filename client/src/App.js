@@ -1,13 +1,17 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import Navbar from "./Components/Nav/Navbar";
+import Footer from "./Components/Nav/Footer";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from "./Pages/Main/Main";
 import Post from "./Pages/Post/Post";
 import SeenPost from "./Pages/Post/SeenPost";
 import Wrapper from "./Components/Wrapper/Wrapper";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Navbar from "./Components/Nav/Navbar";
-import Footer from "./Components/Nav/Footer";
 import LostDogs from "./Pages/LostDogs/LostDogs";
+
+import {connect} from 'react-redux';
 
 
 
@@ -28,4 +32,8 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = ({users}) => ({
+  users,
+});
+
+export default connect(mapStateToProps)(App);
