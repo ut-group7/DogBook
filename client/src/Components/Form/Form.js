@@ -49,6 +49,7 @@ const Form = props => {
           name="dogSize"
           value={props.dogSize}
           onChange={props.change}
+          defaultValue={"default"}
         >
           <option>0-20lbs</option>
           <option>20-40lbs</option>
@@ -63,7 +64,7 @@ const Form = props => {
         placeholder="Dog Color"
         name="dogColor"
         value={props.dogColor}
-        change={props.change}
+        onChange={props.change}
         />
       </div>
       <div>

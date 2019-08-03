@@ -51,13 +51,13 @@ const Post = function Post() {
       case "dogSize":
         setDogSize(value);
         break;
+      case "dogColor":
+        setDogColor(value);
+        break;
       case "reward":
         setReward(value);
         break;
       case "notes":
-        setNotes(value);
-        break;
-      case "dogColor":
         setNotes(value);
         break;
       default:
