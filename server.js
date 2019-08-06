@@ -98,3 +98,17 @@ const port = 3030;
 app.listen(port, () => {
   console.log(`Feather server listening on port ${port}`);
 });
+
+
+// app.use(multer({ dest: './uploads/',
+//   rename: function (fieldname, filename) {
+//     return filename;
+//   },
+//  }));
+
+//  app.post('/api/photo',function(req,res){
+//   var newItem = new Item();
+//   newItem.img.data = fs.readFileSync(req.files.userPhoto.path)
+//   newItem.img.contentType = 'image/png';
+//   newItem.save();
+//  });
