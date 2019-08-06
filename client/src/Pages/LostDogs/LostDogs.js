@@ -34,7 +34,6 @@ const LostDogs = function Post() {
       });
   };
   return (
-    // <ul>
     <div>
       <a href="/postLost">Post Lost Dog</a>
       {data.map(item => (
@@ -70,7 +69,6 @@ const LostDogs = function Post() {
         // </li>
       ))}
       </div>
-    // </ul>
   );
 };
 
