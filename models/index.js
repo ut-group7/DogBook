@@ -1,4 +1,5 @@
 module.exports = {
     LostDog: require("./lostDog"),
-    SeenDog: require("./seenDog")
+    SeenDog: require("./seenDog"),
+   // UploadImage: require("./uploadPic")
 };
