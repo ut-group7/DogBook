@@ -4,14 +4,13 @@ const socketio = require("@feathersjs/socketio");
 const cors = require("cors");
 const passport = require('passport');
 const Strategy = require('passport-google-oauth20').Strategy;
+require('dotenv').config()
 
 const mongoose = require("mongoose");
 const service = require("feathers-mongoose");
 
 const Model = require("./models/lostDog");
 const db = require("./models/index");
-
-require('dotenv').config()
 
 mongoose.Promise = global.Promise;
 
@@ -24,9 +23,29 @@ const app = express(feathers());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(require('express-session')({
+  secret: process.env.SESS_SECRET,
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 1 * 60 * 1000
+  }
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 app.configure(express.rest());
 app.configure(socketio());
 app.use(cors());
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
 
 
 //the below code will help create a dog in your db for testing/seeding purposes. comment it out once you have got the server running successfully.
@@ -41,7 +60,6 @@ app.use(cors());
 // }).then(function(task){
 //     console.log("created task", task);
 // });
-
 
 
 //locate one task, for testing purposes
@@ -118,6 +136,10 @@ passport.use(new Strategy({
 },
 function(accessToken, refreshToken, profile, cb) {
   console.log('callback function fired')
+  console.log(profile)
+  db.User.findOrCreate({ googleId: profile.id }, function (err, user) {
+    return cb(err, user);
+  });
 }
 ));
 
@@ -129,7 +151,8 @@ app.get('/auth/google/redirect',
   passport.authenticate('google', { failureRedirect: '/' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/');
+    res.redirect('http://localhost:3000/');
+    
   });
 
 
