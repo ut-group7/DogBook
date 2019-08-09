@@ -61,7 +61,7 @@ passport.use(new Strategy({
       // Successful authentication, redirect home.
       res.redirect('http://localhost:3000/');
       
-    });
+  });
   
   router.get('/testauth', (req, res) => {
     console.log("REQ.USER EXISTS? : " + req.user);
@@ -72,6 +72,12 @@ passport.use(new Strategy({
       res.status(404).json({message: 'no user loggedin'});
       //console.log('no user authenticated')
     }
+  });
+
+  router.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+      res.redirect('http://localhost:3000/')
+    })
   })
 
 
