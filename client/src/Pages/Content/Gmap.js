@@ -3,7 +3,7 @@ import {
   GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from "react-google-maps";
 import * as lostDogs from "../../Data/lostdogs.json"
 // import dgicon from "../Content/mapdog.svg";
-
+import GOOGLE_MAP_KEY from "../../keys";
 
 
 function Map() {
@@ -59,8 +59,7 @@ export default function App() {
     <div className="Gmap" style={{ width: "100%", height: "300px" }}>
       <WrappedMap
         googleMapURL={`https://maps.googleapis.com/maps/api/js?&key=${
-          "AIzaSyCbt-z1JLyXUZwff9iG3C70Ic6tHdJYv3o"
-        }`}
+          GOOGLE_MAP_KEY }`}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `100%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
