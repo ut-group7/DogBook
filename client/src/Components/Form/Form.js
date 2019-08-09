@@ -1,12 +1,16 @@
 import React from "react";
+import "./form.css";
+
 import { connect } from "react-redux";
 import { users } from "../../reducers/users";
 import actions from "../../actions";
 import { getRandomDog } from "../../store";
 
+// var multer = require('multer');
+
 const Form = props => {
   return (
-    <form>
+    <form id="inputDog">
       <div>
         <label>Dog Breed</label>
         <input
@@ -59,12 +63,12 @@ const Form = props => {
       </div>
       <div>
         <label>Dog Color</label>
-        <input 
-        type="text"
-        placeholder="Dog Color"
-        name="dogColor"
-        value={props.dogColor}
-        onChange={props.change}
+        <input
+          type="text"
+          placeholder="Dog Color"
+          name="dogColor"
+          value={props.dogColor}
+          onChange={props.change}
         />
       </div>
       <div>

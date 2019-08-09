@@ -30,7 +30,7 @@ const Post = function Post() {
       method: "POST",
       body: JSON.stringify(input)
     };
-    fetch("http://localhost:3030/api/data", options)
+    fetch("http://localhost:3030/api/lostDogs", options)
       .then(res => res.json())
       .then(res => setData([...data, res]))
       .catch(err => console.log("request failed" + err));
