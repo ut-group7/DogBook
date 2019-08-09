@@ -1,0 +1,347 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 960,
+        "FACILITYID": 28014,
+        "NAME": "Labrador Retriever Mix",
+        "DESCRIPTIO": "Brown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.255214, -97.578715]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 1219,
+        "FACILITYID": 28001,
+        "NAME": "Pit Bull Mix",
+        "DESCRIPTIO": "Chocolate-White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.286071, -97.661684]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 1157,
+        "FACILITYID": 28002,
+        "NAME": "Labrador Retriever Mix",
+        "DESCRIPTIO": "Black-White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.410224, -97.695595]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 9,
+        "FACILITYID": 28006,
+        "NAME": "Chihuahua Shorthair-Miniature Pinscher",
+        "DESCRIPTIO": "Red-White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.331543, -97.717153]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 1160,
+        "FACILITYID": 28007,
+        "NAME": "Miniature Pinscher-Chihuahua Shorthair",
+        "DESCRIPTIO": "Red"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.264161, -97.649360]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 1693,
+        "FACILITYID": 28016,
+        "NAME": "Pit Bull",
+        "DESCRIPTIO": "Black-White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.330661, -97.700916]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 1717,
+        "FACILITYID": 28018,
+        "NAME": "Pit Bull",
+        "DESCRIPTIO": "Brown-White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.330661, -97.700916]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 137,
+        "FACILITYID": 28019,
+        "NAME": "Pit Bull",
+        "DESCRIPTIO": "White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.342666, -97.614503]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 1133,
+        "FACILITYID": 28020,
+        "NAME": "American Pit Bull Terrier",
+        "DESCRIPTIO": "Blue-White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.284035, -97.69400]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 657,
+        "FACILITYID": 28000,
+        "NAME": "Smooth Fox Terrier Mix",
+        "DESCRIPTIO": "Blue-White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.351616, -97.528622]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 653,
+        "FACILITYID": 28008,
+        "NAME": "Catahoula Mix",
+        "DESCRIPTIO": "White-Black"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.217119, -97.795867]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 812,
+        "FACILITYID": 35050,
+        "NAME": "Catahoula Mix",
+        "DESCRIPTIO": "White-Black"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.255456, -97.696209]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 2457,
+        "FACILITYID": 35637,
+        "NAME": "Australian Cattle Dog Mix",
+        "DESCRIPTIO": "Black Brindle-White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.179742, -97.759622]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 430,
+        "FACILITYID": 28005,
+        "NAME": "Chihuahua Shorthair",
+        "DESCRIPTIO": "Blue Merle-White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.179742, -97.759622]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 989,
+        "FACILITYID": 28017,
+        "NAME": "Yorkshire Terrier",
+        "DESCRIPTIO": "Tan-Tri COLOR"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.200571, -97.756311]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 1334,
+        "FACILITYID": 28011,
+        "NAME": "German Shepherd",
+        "DESCRIPTIO": "Brown-White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.223210, -97.797043]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 923,
+        "FACILITYID": 28013,
+        "NAME": "Pointer",
+        "DESCRIPTIO": "Brown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.436329, -97.655718]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 762,
+        "FACILITYID": 28004,
+        "NAME": "Anatolian Shepherd",
+        "DESCRIPTIO": "Black-Brown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.234991, -97.654089]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 52,
+        "FACILITYID": 35120,
+        "NAME": "Labrador Retriever",
+        "DESCRIPTIO": "White-Tan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.259144, -97.711429]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 2488,
+        "FACILITYID": 35815,
+        "NAME": "American Shorthair",
+        "DESCRIPTIO": "Black-Tan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.271129, -97.743700]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 330,
+        "FACILITYID": 28003,
+        "NAME": "Lhasa Apso",
+        "DESCRIPTIO": "Black-White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.184915, -97.787144]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 693,
+        "FACILITYID": 28010,
+        "NAME": "Belgian Malinois Mix",
+        "DESCRIPTIO": "Black/Brown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.330661, -97.700916]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 2544,
+        "FACILITYID": 35667,
+        "NAME": "Domestic Medium Hair",
+        "DESCRIPTIO": "Black"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.330661, -97.700916]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 2599,
+        "FACILITYID": 49251,
+        "NAME": "Australian Cattle Dog Mix",
+        "DESCRIPTIO": "Brown Brindle/White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.342666, -97.614503]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 2278,
+        "FACILITYID": 49211,
+        "NAME": "Beagle/Chihuahua Shorthair",
+        "DESCRIPTIO": "Black/White"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.284035, -97.69400]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "DOG_ID": 2113,
+        "FACILITYID": 35299,
+        "NAME": "Rat Terrier/Chihuahua Shorthair",
+        "DESCRIPTIO": "White/Red"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.351616, -97.528622]
+      }
+    }
+  ]
+}
