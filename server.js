@@ -37,8 +37,14 @@ app.use(require('express-session')({
     maxAge: 1 * 60 * 1000
   }
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); 
+  res.header("Access-Control-Allow-Credentials", true);
+  next();
+});
 
 
 app.configure(express.rest());
@@ -122,7 +128,7 @@ passport.use(new Strategy({
   callbackURL: "http://localhost:3030/auth/google/redirect"
 },
 function(accessToken, refreshToken, profile, cb) {
-  console.log('callback function fired')
+  //console.log('callback function fired')
   console.log(profile)
   db.User.findOrCreate({ googleId: profile.id }, function (err, user) {
     return cb(err, user);
@@ -141,6 +147,17 @@ app.get('/auth/google/redirect',
     res.redirect('http://localhost:3000/');
     
   });
+
+app.get('/auth/testauth', (req, res) => {
+  console.log("REQ.USER EXISTS? : " + req.user);
+  if(req.user){
+    //console.log('authenticated user: ' + req.user)
+    res.json(req.user)
+  }else {
+    res.status(404).json({message: 'no user loggedin'});
+    //console.log('no user authenticated')
+  }
+})
 
 
 const port = 3030;

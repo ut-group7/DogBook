@@ -10,6 +10,7 @@ import SeenPost from "./Pages/Post/SeenPost";
 import Wrapper from "./Components/Wrapper/Wrapper";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import LostDogs from "./Pages/LostDogs/LostDogs";
+import Profile from "./Pages/Profile/profile";
 
 import {connect} from 'react-redux';
 
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/postLost" component={Post} />
           <Route exact path="/postSeen" component={SeenPost} />
           <Route exact path="/Lost" component={LostDogs} />
+          <Route exact path="/profile" component={Profile} />
           </Wrapper>
         <Footer />
       </div>
