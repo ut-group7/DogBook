@@ -30,7 +30,8 @@ class Profile extends React.Component {
         }else{
             return(
                 <div>
-                    <h1>{this.state.response._id}</h1>
+                    <img src={'https://png.pngtree.com/svg/20161230/fc951b209c.svg'} alt="avatar"></img>
+                    <h1>{`Welcome, ${this.state.response.name}!`}</h1>
                     <a type='button' className="btn btn-danger" href='http://localhost:3030/api/auth/logout'>logout</a>
                 </div>
             )

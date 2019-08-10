@@ -45,7 +45,7 @@ passport.use(new Strategy({
   function(accessToken, refreshToken, profile, cb) {
     //console.log('callback function fired')
     console.log(profile)
-    db.User.findOrCreate({ googleId: profile.id }, function (err, user) {
+    db.User.findOrCreate({ googleId: profile.id, name: profile.displayName }, function (err, user) {
       return cb(err, user);
     });
   }
@@ -58,7 +58,7 @@ passport.use(new Strategy({
   router.get('/google/redirect', 
     passport.authenticate('google', { failureRedirect: '/' }),
     function(req, res) {
-      // Successful authentication, redirect home.
+      // Successful authentication, redirect to profile page.
       res.redirect('http://localhost:3000/profile');
       
   });
