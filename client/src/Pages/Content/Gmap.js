@@ -3,7 +3,7 @@ import {
   GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from "react-google-maps";
 import * as lostDogs from "../../Data/lostdogs.json"
 // import dgicon from "../Content/mapdog.svg";
-import GOOGLE_MAP_KEY from "../../keys";
+const GOOGLE_MAP_KEY = "AIzaSyCx5H0EDQpmccKnYt_cZt3Qifvy0n3yD6I";
 
 
 function Map() {
