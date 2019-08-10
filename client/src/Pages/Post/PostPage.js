@@ -1,18 +1,16 @@
 import React from 'react';
+import Post from './Post';
 import Login from '../../Components/login';
-import Post from '../Post/Post';
-require('./profile.css');
 
-class Profile extends React.Component {
+class PostPage extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            data: null,
             response: null,
             isLoading: true
         }
-    };
-
+    }
+    
     authTest = () => {
         fetch('http://localhost:3030/api/auth/testauth', {credentials: 'include', mode: 'cors'})
         .then(res => res.json())
@@ -26,21 +24,13 @@ class Profile extends React.Component {
         this.authTest();
     };
 
+
     responseHandler() {
         if(this.state.response.error){
             return(<Login></Login>)
         }else{
             return(
-                <div className="col profile">
-                    <img className="avatar" src={'https://png.pngtree.com/svg/20161230/fc951b209c.svg'} alt="avatar"></img>
-                    <h1>{`Welcome, ${this.state.response.name}!`}</h1>
-                    <a type='button' className="btn btn-danger" href='http://localhost:3030/api/auth/logout'>logout</a>
-                    <div className="row myPosts">
-                        <Post userId={this.state.response._id}></Post>
-                        <h1>My Posts</h1> {/* this will need to be a component that renders any posting made by user*/}
-                    </div>
-                    
-                </div>
+                <Post></Post>
             )
         }
     };
@@ -50,7 +40,6 @@ class Profile extends React.Component {
 
         return(
             <div>
-                {/*<button className="btn btn-primary" onClick={this.authTest}>Test Auth</button>*/}
                 { this.state.isLoading ? <h1>Loading</h1> : null }
                 { this.state.response === null ? <Login></Login> : this.responseHandler() }
             </div>
@@ -58,4 +47,4 @@ class Profile extends React.Component {
     }
 }
 
-export default Profile;
+export default PostPage;

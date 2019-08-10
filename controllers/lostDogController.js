@@ -13,6 +13,11 @@ module.exports = {
     .then(dbDog => res.json(dbDog))
     .catch(err => res.json(err));
   },
+  findByUser: function(req,res) {
+    db.LostDog.find({ user: ObjectId(req.params.id) })
+    .then(dbDog => res.json(dbDog))
+    .catch(err => res.json(err));
+  },
   create: function(req, res){
     db.LostDog.create(req.body)
     .then(dbDog => res.json(dbDog))

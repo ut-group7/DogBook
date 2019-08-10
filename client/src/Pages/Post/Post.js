@@ -3,7 +3,7 @@ import Form from "../../Components/Form/Form";
 import imageUrl from "../Content/lost-dog.jpg";
 import "./SeenPost.css";
 
-const Post = function Post() {
+const Post = function Post(props) {
   const [dogBreed, setDogBreed] = useState("");
   const [contactName, setContactName] = useState("");
   const [contactNumber, setContactNumber] = useState("");
@@ -23,7 +23,8 @@ const Post = function Post() {
       dogSize: dogSize,
       reward: reward,
       notes: notes,
-      dogColor: dogColor
+      dogColor: dogColor,
+      user: props.userId
     };
     const options = {
       headers: { "Content-Type": "application/json" },
@@ -66,9 +67,9 @@ const Post = function Post() {
   };
 
   return (
-    <div className="Seen-page" style={{ backgroundImage: `url(${imageUrl})` }}>
+    <div className="Lost-page">
       <div className="App-content">
-        <h2>Lost Dogs</h2>
+        <h2>Post Lost Dog</h2>
         <Form change={handleInputChange} submit={handleSubmit} />
         <a href="/Lost">Back to lost dogs</a>
       </div>
