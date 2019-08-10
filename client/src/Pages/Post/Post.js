@@ -66,9 +66,9 @@ const Post = function Post() {
   };
 
   return (
-    <div className="Seen-page" style={{ backgroundImage: `url(${imageUrl})` }}>
+    <div className="Lost-page">
       <div className="App-content">
-        <h2>Lost Dogs</h2>
+        <h2>Post Lost Dog</h2>
         <Form change={handleInputChange} submit={handleSubmit} />
         <a href="/Lost">Back to lost dogs</a>
       </div>
