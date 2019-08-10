@@ -36,7 +36,7 @@ class Profile extends React.Component {
                     <h1>{`Welcome, ${this.state.response.name}!`}</h1>
                     <a type='button' className="btn btn-danger" href='http://localhost:3030/api/auth/logout'>logout</a>
                     <div className="row myPosts">
-                        <Post></Post>
+                        <Post userId={this.state.response._id}></Post>
                         <h1>My Posts</h1> {/* this will need to be a component that renders any posting made by user*/}
                     </div>
                     
