@@ -1,15 +1,24 @@
-.Main-page {
-    height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
+.jumbotron {
+    background-color:rgba(63, 189, 191, 0.1);
+    padding-top: 0px;
 }
 
-.App-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 40px;
+p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+
+}
+
+.display-3 {
+    font-size: 3.5rem;
+    font-weight: 200;
+    line-height: 1.2;
+}
+
+body {
+    background-image: url("../Content/noise_pattern_with_crosslines.png");
 }
