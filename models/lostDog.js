@@ -10,7 +10,12 @@ const lostDogSchema = new Schema({
   reward: { type: String },
   notes: { type: String },
   createdAt: { type: Date, default: Date.now() },
-  lost: { type: Boolean, default: true }
+  lost: { type: Boolean, default: true },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: false
+}
 });
 
 const LostDog = mongoose.model("LostDog", lostDogSchema);

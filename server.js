@@ -2,18 +2,11 @@ const feathers = require("@feathersjs/feathers");
 const express = require("@feathersjs/express");
 const socketio = require("@feathersjs/socketio");
 const cors = require("cors");
-const passport = require('passport');
-const Strategy = require('passport-google-oauth20').Strategy;
-require('dotenv').config()
-
+const mongoose = require("mongoose");
+const db = require("./models/index");
 const app = express(feathers());
 const routes = require("./routes");
-
-app.use(cors());
-
-const mongoose = require("mongoose");
-
-const db = require("./models/index");
+require('dotenv').config()
 
 mongoose.Promise = global.Promise;
 
@@ -21,36 +14,14 @@ mongoose.connect("mongodb://localhost:27017/snoopDog", {
   useNewUrlParser: true
 });
 
-
-
-
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.errorHandler());
 app.use(routes);
-
-
-app.use(require('express-session')({
-  secret: process.env.SESS_SECRET,
-  resave: true,
-  saveUninitialized: true,
-  cookie: {
-    maxAge: 1 * 60 * 1000
-  }
-}));
-app.use(passport.initialize());
-app.use(passport.session());
-
 
 app.configure(express.rest());
 app.configure(socketio());
-
-passport.serializeUser(function(user, done) {
-  done(null, user);
-});
-
-passport.deserializeUser(function(user, done) {
-  done(null, user);
-});
 
 
 
@@ -110,37 +81,6 @@ app.delete("/api/seen/data/:id", function(req, res) {
     .catch(err => res.status(422).json(err));
 });
 
-app.use(express.errorHandler());
-
-//======================================================
-//Authentication
-//======================================================
-
-passport.use(new Strategy({
-  clientID: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:3030/auth/google/redirect"
-},
-function(accessToken, refreshToken, profile, cb) {
-  console.log('callback function fired')
-  console.log(profile)
-  db.User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    return cb(err, user);
-  });
-}
-));
-
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile'] })
-  );
-
-app.get('/auth/google/redirect', 
-  passport.authenticate('google', { failureRedirect: '/' }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('http://localhost:3000/');
-    
-  });
 
 
 const port = 3030;
