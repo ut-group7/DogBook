@@ -59,7 +59,7 @@ passport.use(new Strategy({
     passport.authenticate('google', { failureRedirect: '/' }),
     function(req, res) {
       // Successful authentication, redirect home.
-      res.redirect('http://localhost:3000/');
+      res.redirect('http://localhost:3000/profile');
       
   });
   
@@ -69,7 +69,7 @@ passport.use(new Strategy({
       //console.log('authenticated user: ' + req.user)
       res.json(req.user)
     }else {
-      res.status(404).json({message: 'no user loggedin'});
+      res.status(500).send({error: 'something went wrong'});
       //console.log('no user authenticated')
     }
   });
