@@ -43,7 +43,6 @@ passport.use(new Strategy({
     callbackURL: "http://localhost:3030/api/auth/google/redirect"
   },
   function(accessToken, refreshToken, profile, cb) {
-    //console.log('callback function fired')
     console.log(profile)
     db.User.findOrCreate({ googleId: profile.id, name: profile.displayName }, function (err, user) {
       return cb(err, user);
@@ -64,13 +63,10 @@ passport.use(new Strategy({
   });
   
   router.get('/testauth', (req, res) => {
-    console.log("REQ.USER EXISTS? : " + req.user);
     if(req.user){
-      //console.log('authenticated user: ' + req.user)
       res.json(req.user)
     }else {
-      res.status(500).send({error: 'something went wrong'});
-      //console.log('no user authenticated')
+      res.status(500).send({error: 'something went wrong - no user authenticated'});
     }
   });
 
