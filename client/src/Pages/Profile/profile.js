@@ -1,6 +1,7 @@
 import React from 'react';
 import Login from '../../Components/login';
 import Post from '../Post/Post';
+import Location from '../../Components/location';
 require('./profile.css');
 
 class Profile extends React.Component {

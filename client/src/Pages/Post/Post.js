@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Form from "../../Components/Form/Form";
+import Geolocation from '../../Components/location';
 import imageUrl from "../Content/lost-dog.jpg";
 import "./SeenPost.css";
 
@@ -11,6 +12,7 @@ const Post = function Post(props) {
   const [reward, setReward] = useState("");
   const [notes, setNotes] = useState("");
   const [dogColor, setDogColor] = useState("");
+  const [location, setLocation] = useState([]);
 
   const [data, setData] = useState([]);
 
@@ -24,7 +26,8 @@ const Post = function Post(props) {
       reward: reward,
       notes: notes,
       dogColor: dogColor,
-      user: props.userId
+      user: props.userId,
+      location: JSON.parse(localStorage.getItem('myLocation'))
     };
     const options = {
       headers: { "Content-Type": "application/json" },
@@ -71,6 +74,7 @@ const Post = function Post(props) {
       <div className="App-content">
         <h2>Post Lost Dog</h2>
         <Form change={handleInputChange} submit={handleSubmit} />
+        <Geolocation />
         <a href="/Lost">Back to lost dogs</a>
       </div>
     </div>

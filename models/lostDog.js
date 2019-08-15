@@ -15,7 +15,8 @@ const lostDogSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User',
     required: false
-}
+  },
+  location: {type: Object}
 });
 
 const LostDog = mongoose.model("LostDog", lostDogSchema);
