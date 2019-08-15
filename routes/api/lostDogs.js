@@ -13,7 +13,5 @@ router
   .get(lostDogsController.findById)
   .delete(lostDogsController.remove);
 
-router
-  .route("/user/:id")
-  .get(lostDogsController.findByUser);
+
 module.exports = router;
