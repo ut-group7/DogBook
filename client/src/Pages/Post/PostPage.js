@@ -29,8 +29,9 @@ class PostPage extends React.Component {
         if(this.state.response.error){
             return(<Login></Login>)
         }else{
+            const userProp = this.state.response._id ? this.state.response._id : 'none';
             return(
-                <Post></Post>
+                <Post userId={userProp}></Post>
             )
         }
     };
