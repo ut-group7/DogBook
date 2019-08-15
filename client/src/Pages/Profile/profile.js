@@ -34,7 +34,7 @@ class Profile extends React.Component {
                 <div className="col profile">
                     <img className="avatar" src={'https://png.pngtree.com/svg/20161230/fc951b209c.svg'} alt="avatar"></img>
                     <h1>{`Welcome, ${this.state.response.name}!`}</h1>
-                    <a type='button' className="btn btn-danger" href='http://localhost:3030/api/auth/logout'>logout</a>
+                    <a className="logout" href='http://localhost:3030/api/auth/logout'>Logout</a>
                     <div className="row myPosts">
                         <Post userId={this.state.response._id}></Post>
                         <h1>My Posts</h1> {/* this will need to be a component that renders any posting made by user*/}
