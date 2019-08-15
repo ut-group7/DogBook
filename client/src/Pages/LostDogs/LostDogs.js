@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DeleteBtn from "../../Components/DeleteBtn/DeleteBtn";
 import Moment from "react-moment";
+import "./LostDogs.css";
 
 const LostDogs = function Post() {
   const [data, setData] = useState([]);
@@ -62,11 +63,10 @@ const LostDogs = function Post() {
               <td>{item.notes}</td>
             </tr>
           </tbody>
+          {/* <DeleteBtn key={item._id} onClick={() => deleteDog(item._id)} /> */}
+
         </table>
-        // <li key={item._id} id={item._id}>
-        //   Owner: {item.contactName} Dog:{item.dogBreed}
-        //   <DeleteBtn key={item._id} onClick={() => deleteDog(item._id)} />
-        // </li>
+                
       ))}
       </div>
   );
