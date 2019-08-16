@@ -1,10 +1,14 @@
 import React from "react";
 import useForm from "../../Utils/useForm";
+import Geolocation from '../location';
 import "./form.css";
 
-const TestForm = () => {
+const TestForm = (props) => {
   const submitForm = e => {
     e.preventDefault();
+    const location = localStorage.getItem('myLocation')
+    inputs.location = location;
+    inputs.user = props.userId;
     console.log(inputs);
     const url = localStorage.getItem("img");
     inputs.img = url;
@@ -23,6 +27,7 @@ const TestForm = () => {
   const { inputs, handleInputChange, handleSubmit, uploadFile } = useForm();
 
   return (
+    <div>
     <form className="submitForm" onSubmit={submitForm}>
       <div>
         <label>Dog Breed</label>
@@ -99,9 +104,11 @@ const TestForm = () => {
           onChange={uploadFile}
         />
       </div>
-
+      <h2>Mark your pets last seen location below</h2>
+      <Geolocation />
       <button type="submit">Submit</button>
     </form>
+    </div>
   );
 };
 export default TestForm;

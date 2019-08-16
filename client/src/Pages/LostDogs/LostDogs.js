@@ -36,7 +36,7 @@ const LostDogs = function Post() {
   };
   return (
     <div className="container">
-      <a className="postLink" href="/testForm">
+      <a className="postLink" href="/postLost">
         Post Lost Dog
       </a>
       {data.map(item => (
@@ -49,21 +49,42 @@ const LostDogs = function Post() {
           </thead>
           <tbody>
             <tr>
-              <th>Dog Breed: </th>
-              <td>{item.dogBreed}</td>
-              <th>Contact Name: </th>
-              <td>{item.contactName}</td>
-              <th>Contact Number: </th>
-              <td>{item.contactNumber}</td>
-              <th>Approximate Dog Size: </th>
-              <td>{item.dogSize}</td>
-              <th>Dog Color: </th>
-              <td>{item.dogColor}</td>
-              <th>Reward: </th>
-              <td>{item.reward}</td>
-              <th>Notes: </th>
-              <td>{item.notes}</td>
-              <img src={item.img} alt="dog" height="42" width="42"/>
+              <div className="styleRow">
+                <th>Dog Breed: </th>
+                <td>{item.dogBreed}</td>
+              </div>
+              <div className="styleRow">
+                <th>Contact Name: </th>
+                <td>{item.contactName}</td>
+              </div>
+
+              <div className="styleRow">
+                <th>Contact Number: </th>
+                <td>{item.contactNumber}</td>
+              </div>
+
+              <div className="styleRow">
+                <th>Approximate Dog Size: </th>
+                <td>{item.dogSize}</td>
+              </div>
+
+              <div className="styleRow">
+                <th>Dog Color: </th>
+                <td>{item.dogColor}</td>
+              </div>
+
+              <div className="styleRow">
+                <th>Reward: </th>
+                <td>{item.reward}</td>
+              </div>
+
+              <div className="styleRow">
+                <th>Notes: </th>
+                <td>{item.notes}</td>
+              </div>
+              <div>
+                <img src={item.img} alt="dog" height="42" width="42"/>
+              </div>
             </tr>
           </tbody>
           {/* <DeleteBtn key={item._id} onClick={() => deleteDog(item._id)} /> */}
