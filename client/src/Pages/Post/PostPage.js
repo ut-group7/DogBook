@@ -13,7 +13,7 @@ class PostPage extends React.Component {
   }
 
   authTest = () => {
-    fetch("http://localhost:3030/api/auth/testauth", {
+    fetch("/api/auth/testauth", {
       credentials: "include",
       mode: "cors"
     })

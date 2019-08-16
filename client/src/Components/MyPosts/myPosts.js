@@ -9,7 +9,7 @@ class MyPosts extends React.Component {
     }
 
     fetchPosts = () => {
-        fetch(`http://localhost:3030/api/user/${this.props.userId}`)
+        fetch(`/api/user/${this.props.userId}`)
         .then(res => res.json())
         .then(res => {
             this.setState({response: res})

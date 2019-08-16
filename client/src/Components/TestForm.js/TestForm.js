@@ -11,7 +11,7 @@ const TestForm = () => {
       method: "POST",
       body: JSON.stringify(inputs)
     };
-    fetch("http://localhost:3030/api/lostDogs", options)
+    fetch("/api/lostDogs", options)
       .then(res => res.json())
       .catch(err => console.log("request failed" + err));
 

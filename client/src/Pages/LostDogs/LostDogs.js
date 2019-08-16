@@ -7,7 +7,7 @@ const LostDogs = function Post() {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
-    const response = await fetch("http://localhost:3030/api/lostDogs");
+    const response = await fetch("/api/lostDogs");
     const json = await response.json();
     setData(json);
   };
@@ -23,7 +23,7 @@ const LostDogs = function Post() {
         "Content-Type": "application/json"
       }
     };
-    fetch("http://localhost:3030/api/lostDogs/" + id, options)
+    fetch("/api/lostDogs/" + id, options)
       .then(res =>
         res
           .json()

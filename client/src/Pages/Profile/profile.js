@@ -16,7 +16,7 @@ class Profile extends React.Component {
     };
 
     authTest = () => {
-        fetch('http://localhost:3030/api/auth/testauth', {credentials: 'include', mode: 'cors'})
+        fetch('/api/auth/testauth', {credentials: 'include', mode: 'cors'})
         .then(res => res.json())
         .then(res => {res ? console.log(res) : console.log('no res')
             this.setState({isLoading: false, response: res})
@@ -36,7 +36,7 @@ class Profile extends React.Component {
                 <div className="col profile">
                     <img className="avatar" src={'https://png.pngtree.com/svg/20161230/fc951b209c.svg'} alt="avatar"></img>
                     <h1>{`Welcome, ${this.state.response.name}!`}</h1>
-                    <a type='button' className="btn btn-danger" href='http://localhost:3030/api/auth/logout'>logout</a>
+                    <a type='button' className="btn btn-danger" href='/api/auth/logout'>logout</a>
                     <div className="row myPosts">
                         <TestForm userId={this.state.response._id}></TestForm>
                         <h1>My Posts</h1>

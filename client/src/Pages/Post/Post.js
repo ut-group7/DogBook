@@ -31,7 +31,7 @@ const Post = function Post(props) {
       method: "POST",
       body: JSON.stringify(input)
     };
-    fetch("http://localhost:3030/api/lostDogs", options)
+    fetch("/api/lostDogs", options)
       .then(res => res.json())
       .then(res => setData([...data, res]))
       .catch(err => console.log("request failed" + err));

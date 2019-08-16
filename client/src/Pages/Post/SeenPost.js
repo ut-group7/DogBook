@@ -16,7 +16,7 @@ const SeenPost = function SeenPost() {
       method: "POST",
       body: JSON.stringify(input)
     };
-    fetch("http://localhost:3030/api/seen/data", options)
+    fetch("/api/seen/data", options)
       .then(res => res.json())
       .then(res => setData([...data, res]))
       .then(res => console.log(res))
@@ -41,7 +41,7 @@ const SeenPost = function SeenPost() {
         "Content-Type": "application/json"
       }
     };
-    fetch("http://localhost:3030/api/seen/data/" + id, options)
+    fetch("/api/seen/data/" + id, options)
       .then(res =>
         res
           .json()
@@ -55,7 +55,7 @@ const SeenPost = function SeenPost() {
 
   //loading initial data, works similiarly to componentDidMount
   const fetchData = async () => {
-    const response = await fetch(`http://localhost:3030/api/seen/data`);
+    const response = await fetch(`/api/seen/data`);
     const json = await response.json();
     setData(json);
   };
