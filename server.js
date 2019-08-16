@@ -6,7 +6,6 @@ const mongoose = require("mongoose");
 const db = require("./models/index");
 const app = express(feathers());
 const routes = require("./routes");
-// require('dotenv').config()
 
 mongoose.Promise = global.Promise;
 
