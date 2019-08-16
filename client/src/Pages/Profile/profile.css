@@ -15,10 +15,13 @@ img {
 }
 
 .myPosts {
+    margin-top: 100px;
     padding-top: 50px;
     display: flex;
-    flex-direction: row;
-
+    flex-direction: column;
+    background-color: white;
+    padding-left: 150px;
+    padding-right: 150px;
 }
 
 .logout {
@@ -39,4 +42,11 @@ img {
     background-color: rgb(250, 133, 133);
     color: #3d3d3d;
     text-decoration: none;
+}
+
+.myPosts h1 {
+    font-size: 60px;
+    text-align: center;
+    text-decoration: underline;
+    color: blue;
 }

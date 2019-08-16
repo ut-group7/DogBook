@@ -1,8 +1,8 @@
 import React from 'react';
 import Login from '../../Components/LoginButton/login';
-import Post from '../Post/Post';
 import MyPosts from '../../Components/MyPosts/myPosts';
 import LoginBox from '../../Components/LoginBox/LoginBox';
+import TestForm from '../../Components/TestForm.js/TestForm';
 require('./profile.css');
 
 class Profile extends React.Component {
@@ -37,9 +37,9 @@ class Profile extends React.Component {
                     <img className="avatar" src={'https://png.pngtree.com/svg/20161230/fc951b209c.svg'} alt="avatar"></img>
                     <h1>{`Welcome, ${this.state.response.name}!`}</h1>
                     <a className="logout" href='http://localhost:3030/api/auth/logout'>Logout</a>
-                    <div className="row myPosts">
-                        <Post userId={this.state.response._id}></Post>
-                        <h1>My Posts</h1>
+                    <TestForm userId={this.state.response._id}></TestForm>
+                    <div className="myPosts">
+                        <h1>MY POSTS</h1>
                         <MyPosts userId={this.state.response._id} />
                     </div>
                     
@@ -53,7 +53,6 @@ class Profile extends React.Component {
 
         return(
             <div>
-                {/*<button className="btn btn-primary" onClick={this.authTest}>Test Auth</button>*/}
                 { this.state.isLoading ? <h1>Loading</h1> : null }
                 { this.state.response === null ? <Login></Login> : this.responseHandler() }
             </div>
