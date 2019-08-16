@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const lostDogSchema = new Schema({
   dogBreed: { type: String, required: true },
   contactName: { type: String, required: true },
-  contactNumber: { type: String },
+  email: { type: String },
   dogSize: { type: String },
   dogColor: { type: String },
   reward: { type: String },

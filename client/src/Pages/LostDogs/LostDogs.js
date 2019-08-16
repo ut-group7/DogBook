@@ -59,8 +59,8 @@ const LostDogs = function Post() {
               </div>
 
               <div className="styleRow">
-                <th>Contact Number: </th>
-                <td>{item.contactNumber}</td>
+                <th>Email: </th>
+                <td>{item.email}</td>
               </div>
 
               <div className="styleRow">
