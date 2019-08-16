@@ -14,7 +14,7 @@ function Footer() {
                 <ul className="list-unstyled">
                     <li>
                     {/* CanineConnection Blog */}
-                    <a href="https://www.facebook.com/groups/austinlostandfoundpets/">Lost&Found Facebook</a>
+                    <a target="_blank" href="https://www.facebook.com/groups/austinlostandfoundpets/">Lost&Found Facebook</a>
                     </li>
                     <li>
                     
@@ -41,16 +41,16 @@ function Footer() {
             <div className="col-md-3 col-sm-6">  
                 <h4>Local Services</h4>
                 <ul className="list-unstyled">
-                <li><a href="/">
+                <li><a target="_blank" href="https://www.yelp.com/search?find_desc=Dog+Grooming&find_loc=Austin%2C+TX">
                     Grooming 
                     </a></li>
-                    <li><a href="/">
+                    <li><a target="_blank" href="https://www.yelp.com/search?find_desc=Dog%20daycare&find_loc=Austin%2C%20TX">
                     Doggie Day Cares
                     </a></li>
-                    <li><a href="/">
+                    <li><a target="_blank" href="https://www.yelp.com/search?find_desc=Dog%20training&find_loc=Austin%2C%20TX">
                     Training
                     </a></li>
-                    <li><a href="/">
+                    <li><a target="_blank" href="https://www.yelp.com/search?find_desc=Veterinarians&find_loc=Austin%2C%20TX">
                     Local Veterinarians
                     </a></li>
                 </ul>

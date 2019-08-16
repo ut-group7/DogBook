@@ -83,7 +83,7 @@ const LostDogs = function Post() {
                 <td>{item.notes}</td>
               </div>
               <div>
-                <img src={item.img} alt="dog" height="42" width="42"/>
+                <img src={item.img} alt="dog" height="200" width="200"/>
               </div>
             </tr>
           </tbody>
