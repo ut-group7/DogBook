@@ -2,24 +2,31 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0 0 3em 0;
-    padding: 0;}
-
-thead {
-    border-bottom: 2px solid black;
+    padding: 0;
+    width: 100vw;
 }
 
-/* th, td 
-    {
-        box-sizing: border-box;
-        flex-grow: 1;
-        width: 100%;  // Default to full width
-        padding: 0.8em 1.2em;
-        overflow: hidden; // Or flex might break
-        list-style: none;
-        border: solid @bw white;
-        background: fade(slategrey,20%);
-        > h1, > h2, > h3, > h4, > h5, > h6 { margin: 0; }
-      } */
+thead {
+    margin-right: 20px;
+}
+
+.styleRow {
+    box-sizing: border-box;
+    flex-grow: 1;
+    width: 100%;  
+    padding: 0.8em 1.2em;
+    overflow: hidden; 
+    list-style: none;
+    border: solid  white;
+    background: fade(slategrey,20%);
+    /* > h1, > h2, > h3, > h4, > h5, > h6 { margin: 0; } */
+  }
+
+  .dogTable--2cols > .styleRow { width: 50%; }
+.dogTable--3cols > .styleRow { width: 33.33%; }
+.dogTable--4cols > .styleRow { width: 25%; }
+.dogTable--5cols > .styleRow { width: 20%; }
+.dogTable--6cols > .styleRow { width: 16.6%; }
 
 
 
