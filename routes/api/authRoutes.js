@@ -2,7 +2,6 @@ const router = require('express').Router();
 const db = require('../../models');
 const passport = require('passport');
 const Strategy = require('passport-google-oauth20').Strategy;
-require('dotenv').config()
 
 
 //Defining Middleware
