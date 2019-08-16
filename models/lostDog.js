@@ -11,6 +11,7 @@ const lostDogSchema = new Schema({
   notes: { type: String },
   createdAt: { type: Date, default: Date.now() },
   lost: { type: Boolean, default: true },
+  img: { type: String },
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',

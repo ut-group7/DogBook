@@ -6,6 +6,8 @@ const TestForm = () => {
   const submitForm = e => {
     e.preventDefault();
     console.log(inputs);
+    const url = localStorage.getItem("img");
+    inputs.img = url;
     const options = {
       headers: { "Content-Type": "application/json" },
       method: "POST",
@@ -16,7 +18,7 @@ const TestForm = () => {
       .catch(err => console.log("request failed" + err));
 
     //relocate window
-    window.location.href = "/Lost";
+   window.location.href = "/Lost";
   };
   const { inputs, handleInputChange, handleSubmit, uploadFile } = useForm();
 
@@ -96,7 +98,6 @@ const TestForm = () => {
           name="img"
           onChange={uploadFile}
         />
-        <progress id="uploader" value="0" max="100">0%</progress>
       </div>
 
       <button type="submit">Submit</button>

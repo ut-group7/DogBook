@@ -63,6 +63,7 @@ const LostDogs = function Post() {
               <td>{item.reward}</td>
               <th>Notes: </th>
               <td>{item.notes}</td>
+              <img src={item.img} alt="dog" height="42" width="42"/>
             </tr>
           </tbody>
           {/* <DeleteBtn key={item._id} onClick={() => deleteDog(item._id)} /> */}

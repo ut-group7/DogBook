@@ -22,14 +22,14 @@ var storageRef = firebase.storage().ref();
 
 const useForm = (callback) => {
 
-//----------------------------------------
+    const [inputs, setInputs] = useState({});
 
-
-
-
-
+    //----------------------------------------
 
 const uploadFile = (file) => {
+  file = file.target.files[0];
+  console.log("test");
+
   // Create the file metadata
   var metadata = {
     contentType: 'image/jpeg',
@@ -48,9 +48,9 @@ var path = spaceRef.fullPath;
 
 // File name is 'space.jpg'
 var name = spaceRef.name;
-
+console.log(path, name)
 // Points to 'images'
-var imagesRef = spaceRef.parent;
+// var imagesRef = spaceRef.parent;
 
   // Upload file and metadata to the object 'images/mountains.jpg'
   var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
@@ -62,6 +62,7 @@ var imagesRef = spaceRef.parent;
       // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
       var progress = snapshot.bytesTransferred / snapshot.totalBytes * 100;
       console.log('Upload is ' + progress + '% done');
+      
       switch (snapshot.state) {
         case firebase.storage.TaskState.PAUSED: // or 'paused'
           console.log('Upload is paused');
@@ -90,22 +91,23 @@ var imagesRef = spaceRef.parent;
     function() {
       // Upload completed successfully, now we can get the download URL
       var downloadURL = uploadTask.snapshot.downloadURL;
-      console.log(storageRef.child(fileName));
+      var starsRef = storageRef.child('images/' + name);
+
+      // Get the download URL
+      starsRef.getDownloadURL().then(function(url) {
+        localStorage.setItem("img", url);
+        // return {...inputs, img: url}
+      })
+      
     }
   );
 }
 
 
-
-
-
-
-
-
 //---------------------------------------------
 
-    const [inputs, setInputs] = useState({});
     const handleSubmit = (event) => {
+      console.log(event);
       if (event) {
         event.preventDefault();
       }
@@ -117,6 +119,7 @@ var imagesRef = spaceRef.parent;
     return {
       handleSubmit,
       handleInputChange,
+      uploadFile,
       inputs
     };
   }
