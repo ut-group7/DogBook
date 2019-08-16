@@ -57,7 +57,7 @@ passport.use(new Strategy({
     passport.authenticate('google', { failureRedirect: '/' }),
     function(req, res) {
       // Successful authentication, redirect to profile page.
-      res.redirect('https://canineconnection.herokuapp.com//profile');
+      res.redirect('https://canineconnection.herokuapp.com/profile');
       
   });
   
