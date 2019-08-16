@@ -19,7 +19,17 @@ var storageRef = firebase.storage().ref();
 
 
 
-function uploadFile(file) {
+
+const useForm = (callback) => {
+
+//----------------------------------------
+
+
+
+
+
+
+const uploadFile = (file) => {
   // Create the file metadata
   var metadata = {
     contentType: 'image/jpeg',
@@ -86,7 +96,14 @@ var imagesRef = spaceRef.parent;
 }
 
 
-const useForm = (callback) => {
+
+
+
+
+
+
+//---------------------------------------------
+
     const [inputs, setInputs] = useState({});
     const handleSubmit = (event) => {
       if (event) {

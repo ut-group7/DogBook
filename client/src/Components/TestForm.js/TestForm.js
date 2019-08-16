@@ -18,7 +18,7 @@ const TestForm = () => {
     //relocate window
     window.location.href = "/Lost";
   };
-  const { inputs, handleInputChange, handleSubmit } = useForm();
+  const { inputs, handleInputChange, handleSubmit, uploadFile } = useForm();
 
   return (
     <form className="submitForm" onSubmit={submitForm}>
@@ -94,7 +94,7 @@ const TestForm = () => {
         <input
           type="file"
           name="img"
-          onChange={uploadFile(img)}
+          onChange={uploadFile}
         />
         <progress id="uploader" value="0" max="100">0%</progress>
       </div>
