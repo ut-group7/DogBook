@@ -8,9 +8,7 @@ function Map(props) {
   const [Location, setLocation] = useState([{lat: 30.267153, lng: -97.7430608}]);
 
   const updateLocation = (coord) => {
-      console.log('coord ' + coord)
     setLocation([JSON.parse(coord)])
-    console.log(Location)
   };
 
 
