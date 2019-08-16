@@ -1,0 +1,17 @@
+.submitForm {
+    display: flex;
+    flex-flow: column wrap ;
+    align-content: center;
+    min-height: 100%;
+}
+
+label {
+    width: 80px;
+    margin: 10px;
+}
+
+button {
+    border: 1px solid black;
+    margin-top: 20px;
+    align-self: center;
+}

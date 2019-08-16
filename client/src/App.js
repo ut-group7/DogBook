@@ -13,6 +13,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import LostDogs from "./Pages/LostDogs/LostDogs";
 import Profile from "./Pages/Profile/profile";
 import PostPage from "./Pages/Post/PostPage";
+import TestForm from "./Components/TestForm.js/TestForm";
 
 import {connect} from 'react-redux';
 
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/postSeen" component={SeenPost} />
           <Route exact path="/Lost" component={LostDogs} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/testForm" component={TestForm} />
           </Wrapper>
         <Footer />
       </div>
