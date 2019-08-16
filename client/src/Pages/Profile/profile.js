@@ -2,6 +2,7 @@ import React from 'react';
 import Login from '../../Components/login';
 import Post from '../Post/Post';
 import MyPosts from '../../Components/MyPosts/myPosts';
+import TestForm from '../../Components/TestForm.js/TestForm';
 require('./profile.css');
 
 class Profile extends React.Component {
@@ -37,7 +38,7 @@ class Profile extends React.Component {
                     <h1>{`Welcome, ${this.state.response.name}!`}</h1>
                     <a type='button' className="btn btn-danger" href='http://localhost:3030/api/auth/logout'>logout</a>
                     <div className="row myPosts">
-                        <Post userId={this.state.response._id}></Post>
+                        <TestForm userId={this.state.response._id}></TestForm>
                         <h1>My Posts</h1>
                         <MyPosts userId={this.state.response._id} />
                     </div>
