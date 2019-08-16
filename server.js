@@ -10,7 +10,10 @@ require('dotenv').config()
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb://localhost:27017/snoopDog", {
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
+
+
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true
 });
 
@@ -26,36 +29,7 @@ app.configure(socketio());
 
 
 
-// //locate one task, for testing purposes
-// app.get("/api/data", function(req, res) {
-//   db.LostDog.find({})
-//     .then(dbDog => {
-//       res.json(dbDog);
-//     })
-//     .catch(err => res.json(err));
-// });
 
-// //find unique dog
-// app.get("/api/data/:id", function(req, res) {
-//   db.LostDog.find({ _id: req.params.id })
-//     .then(dbDog => res.json(dbDog))
-//     .catch(err => res.json(err));
-// });
-
-// //post lost dog breed or description.
-// app.post("/api/data", function(req, res) {
-//   db.LostDog.create(req.body)
-//     .then(dbDog => res.json(dbDog))
-//     .catch(err => res.json(err));
-// });
-
-// // delete dog with unique mongo id
-// app.delete("/api/data/:id", function(req, res) {
-//   db.LostDog.findById({ _id: req.params.id })
-//     .then(dbDog => dbDog.remove())
-//     .then(dbDog => res.json(dbDog))
-//     .catch(err => res.status(422).json(err));
-// });
 
 //post seen dog breed or description.
 app.post("/api/seen/data", function(req, res) {
@@ -83,21 +57,7 @@ app.delete("/api/seen/data/:id", function(req, res) {
 
 
 
-const port = 3030;
+const port = process.env.PORT || 3030;
 app.listen(port, () => {
   console.log(`Feather server listening on port ${port}`);
 });
-
-
-// app.use(multer({ dest: './uploads/',
-//   rename: function (fieldname, filename) {
-//     return filename;
-//   },
-//  }));
-
-//  app.post('/api/photo',function(req,res){
-//   var newItem = new Item();
-//   newItem.img.data = fs.readFileSync(req.files.userPhoto.path)
-//   newItem.img.contentType = 'image/png';
-//   newItem.save();
-//  });
