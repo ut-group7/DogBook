@@ -1,6 +1,5 @@
 import React from "react";
 import "./form.css";
-
 import { connect } from "react-redux";
 import { users } from "../../reducers/users";
 import actions from "../../actions";
@@ -10,9 +9,11 @@ import { getRandomDog } from "../../store";
 
 const Form = props => {
   return (
+
+
     <form id="inputDog">
       <div>
-        <label>Dog Breed</label>
+         <label>Dog Breed</label>
         <input
           type="text"
           placeholder="Dog breed or physical description"
