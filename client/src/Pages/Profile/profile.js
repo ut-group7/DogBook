@@ -36,10 +36,10 @@ class Profile extends React.Component {
                 <div className="col profile">
                     <img className="avatar" src={'https://png.pngtree.com/svg/20161230/fc951b209c.svg'} alt="avatar"></img>
                     <h1>{`Welcome, ${this.state.response.name}!`}</h1>
-                    <a type='button' className="btn btn-danger" href='http://localhost:3030/api/auth/logout'>logout</a>
-                    <div className="row myPosts">
-                        <TestForm userId={this.state.response._id}></TestForm>
-                        <h1>My Posts</h1>
+                    <a type='button' className="btn btn-danger" href='http://localhost:3030/api/auth/logout'>Logout</a>
+                    <TestForm userId={this.state.response._id}></TestForm>
+                    <div className="myPosts">
+                        <h1>MY POSTS</h1>
                         <MyPosts userId={this.state.response._id} />
                     </div>
                     
@@ -53,7 +53,6 @@ class Profile extends React.Component {
 
         return(
             <div>
-                {/*<button className="btn btn-primary" onClick={this.authTest}>Test Auth</button>*/}
                 { this.state.isLoading ? <h1>Loading</h1> : null }
                 { this.state.response === null ? <Login></Login> : this.responseHandler() }
             </div>

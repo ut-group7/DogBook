@@ -14,7 +14,8 @@ class MyPosts extends React.Component {
         .then(res => {
             this.setState({response: res})
             console.log(res)
-            console.log(this.state.response[0])})
+            //console.log(this.state.response[0])
+        })
         .catch(err => console.log(err))
     }
 
@@ -28,7 +29,6 @@ class MyPosts extends React.Component {
 
         return (
             <div>
-                <h1>data will go here</h1>
                 {this.state.response === null ? null : this.state.response[0].posts.map(post => {
                     return (
                         <div>
