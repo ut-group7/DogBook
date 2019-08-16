@@ -6,7 +6,9 @@
   "scripts": {
     "test": "mocha || true",
     "start": "node server.js",
-    "dev": "concurrently \"nodemon --ignore 'client/*' && nodemon server.js\" \"cd client && npm start\""
+    "dev": "concurrently \"nodemon --ignore 'client/*' && nodemon server.js\" \"cd client && npm start\"",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
