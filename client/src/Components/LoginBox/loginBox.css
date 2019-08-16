@@ -1,4 +1,5 @@
 .loginWrapper {
+    margin-top: 10%;
     display: flex;
     flex-direction: row;
 }
@@ -8,9 +9,21 @@
     margin-left: 25vw;
     text-align: center;
     background-color: white;
+    padding-bottom: 100px;
 }
 
 .loginBox h1 {
-    padding-bottom: 40px;
     padding-top: 40px;
+}
+
+.loginBox h3 {
+    padding-bottom: 40px;
+}
+
+.divider {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    margin-bottom: 40px;
 }
