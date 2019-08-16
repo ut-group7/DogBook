@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from '../../Components/login';
 import Post from '../Post/Post';
-import Location from '../../Components/location';
+import MyPosts from '../../Components/MyPosts/myPosts';
 require('./profile.css');
 
 class Profile extends React.Component {
@@ -38,7 +38,8 @@ class Profile extends React.Component {
                     <a type='button' className="btn btn-danger" href='http://localhost:3030/api/auth/logout'>logout</a>
                     <div className="row myPosts">
                         <Post userId={this.state.response._id}></Post>
-                        <h1>My Posts</h1> {/* this will need to be a component that renders any posting made by user*/}
+                        <h1>My Posts</h1>
+                        <MyPosts userId={this.state.response._id} />
                     </div>
                     
                 </div>
