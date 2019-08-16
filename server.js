@@ -22,6 +22,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.errorHandler());
 app.use(routes);
 
+app.use(express.static('build'));
+app.get('*', (req, res) => res.sendFile(path.resolve('build', 'index.html'));
+
 app.configure(express.rest());
 app.configure(socketio());
 
