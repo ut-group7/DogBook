@@ -90,6 +90,14 @@ const TestForm = () => {
           required
         />
       </div>
+      <div>
+        <input
+          type="file"
+          name="img"
+          onChange={uploadFile(img)}
+        />
+        <progress id="uploader" value="0" max="100">0%</progress>
+      </div>
 
       <button type="submit">Submit</button>
     </form>
