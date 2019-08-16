@@ -92,6 +92,14 @@ const Form = props => {
           onChange={props.change}
         />
       </div>
+      <div>
+        <input
+          type="file"
+          name="img"
+          onChange={props.change}
+        />
+        <progress id="uploader" value="0" max="100">0%</progress>
+      </div>
       <button type="submit" onClick={props.submit}>
         Submit
       </button>
