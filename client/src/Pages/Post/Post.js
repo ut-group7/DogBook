@@ -82,4 +82,3 @@ const Post = function Post(props) {
 };
 
 export default Post;
->>>>>>> master
