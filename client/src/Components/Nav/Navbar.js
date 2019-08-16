@@ -1,7 +1,7 @@
 import React from "react";
 import logo from '../Nav/logo.png';
 import { connect } from "react-redux";
-import Login from '../login';
+import Login from '../LoginButton/login';
 
 
 

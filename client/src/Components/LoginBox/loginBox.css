@@ -1,0 +1,16 @@
+.loginWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.loginBox {
+    margin-right: 25vw;
+    margin-left: 25vw;
+    text-align: center;
+    background-color: white;
+}
+
+.loginBox h1 {
+    padding-bottom: 40px;
+    padding-top: 40px;
+}

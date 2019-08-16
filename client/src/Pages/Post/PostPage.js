@@ -1,6 +1,6 @@
 import React from 'react';
 import Post from './Post';
-import Login from '../../Components/login';
+import LoginBox from '../../Components/LoginBox/LoginBox';
 
 class PostPage extends React.Component {
     constructor(props){
@@ -27,7 +27,7 @@ class PostPage extends React.Component {
 
     responseHandler() {
         if(this.state.response.error){
-            return(<Login></Login>)
+            return(<LoginBox />)
         }else{
             const userProp = this.state.response._id ? this.state.response._id : 'none';
             return(
@@ -42,7 +42,7 @@ class PostPage extends React.Component {
         return(
             <div>
                 { this.state.isLoading ? <h1>Loading</h1> : null }
-                { this.state.response === null ? <Login></Login> : this.responseHandler() }
+                { this.state.response === null ? <LoginBox /> : this.responseHandler() }
             </div>
         )
     }

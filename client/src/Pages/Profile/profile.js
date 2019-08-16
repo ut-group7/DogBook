@@ -1,7 +1,8 @@
 import React from 'react';
-import Login from '../../Components/login';
+import Login from '../../Components/LoginButton/login';
 import Post from '../Post/Post';
 import MyPosts from '../../Components/MyPosts/myPosts';
+import LoginBox from '../../Components/LoginBox/LoginBox';
 require('./profile.css');
 
 class Profile extends React.Component {
@@ -29,7 +30,7 @@ class Profile extends React.Component {
 
     responseHandler() {
         if(this.state.response.error){
-            return(<Login></Login>)
+            return(<LoginBox/>)
         }else{
             return(
                 <div className="col profile">
