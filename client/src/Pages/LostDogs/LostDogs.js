@@ -35,10 +35,12 @@ const LostDogs = function Post() {
       });
   };
   return (
-    <div>
-      <a href="/postLost">Post Lost Dog</a>
+    <div className="container">
+      <a className="postLink" href="/testForm">
+        Post Lost Dog
+      </a>
       {data.map(item => (
-        <table key={item._id}>
+        <table key={item._id} className="dogTable">
           <thead>
             <th>Post date:</th>
             <th>
@@ -64,11 +66,9 @@ const LostDogs = function Post() {
             </tr>
           </tbody>
           {/* <DeleteBtn key={item._id} onClick={() => deleteDog(item._id)} /> */}
-
         </table>
-                
       ))}
-      </div>
+    </div>
   );
 };
 

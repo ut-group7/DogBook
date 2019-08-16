@@ -1,36 +1,98 @@
-import React from 'react';
+import React from "react";
 import useForm from "../../Utils/useForm";
+import "./form.css";
 
 const TestForm = () => {
-    const test = () => {
-        alert(`User Created! 
-    Name: ${inputs.firstName} ${inputs.lastName}
-    Email: ${inputs.email}`);
-      }
-    const {inputs, handleInputChange, handleSubmit} = useForm();
+  const submitForm = e => {
+    e.preventDefault();
+    console.log(inputs);
+    const options = {
+      headers: { "Content-Type": "application/json" },
+      method: "POST",
+      body: JSON.stringify(inputs)
+    };
+    fetch("http://localhost:3030/api/lostDogs", options)
+      .then(res => res.json())
+      .catch(err => console.log("request failed" + err));
+
+    //relocate window
+    window.location.href = "/Lost";
+  };
+  const { inputs, handleInputChange, handleSubmit } = useForm();
 
   return (
-    <form onSubmit={handleSubmit}>
-  <div>
-    <label>First Name</label>
-    <input type="text" name="firstName" onChange={handleInputChange} value={inputs.firstName} required />
-    <label>Last Name</label>
-    <input type="text" name="lastName" onChange={handleInputChange} value={inputs.lastName} required />
-  </div>
-  <div>
-    <label>Email Address</label>
-    <input type="email" name="email" onChange={handleInputChange} value={inputs.email} required />
-  </div>
-  <div>
-    <label>Password</label>
-    <input type="password" name="password1" onChange={handleInputChange} value={inputs.password1}/>
-  </div>
-  <div>
-    <label>Re-enter Password</label>
-    <input type="password" name="password2" onChange={handleInputChange} value={inputs.password2}/>
-  </div>
-  <button type="submit">Sign Up</button>
-</form>
-  )
-}
+    <form className="submitForm" onSubmit={submitForm}>
+      <div>
+        <label>Dog Breed</label>
+        <input
+          type="text"
+          name="dogBreed"
+          onChange={handleInputChange}
+          value={inputs.dogBreed}
+          required
+        />
+        <label>Contact Name</label>
+        <input
+          type="text"
+          name="contactName"
+          onChange={handleInputChange}
+          value={inputs.contactName}
+          required
+        />
+      </div>
+      <div>
+        <label>Email Address</label>
+        <input
+          type="email"
+          name="email"
+          onChange={handleInputChange}
+          value={inputs.email}
+          required
+        />
+      </div>
+      <div>
+        <label>Dog Size</label>
+        <input
+          type="text"
+          name="dogSize"
+          onChange={handleInputChange}
+          value={inputs.dogSize}
+          required
+        />
+      </div>
+      <div>
+        <label>Reward</label>
+        <input
+          type="text"
+          name="reward"
+          onChange={handleInputChange}
+          value={inputs.reward}
+          required
+        />
+      </div>
+      <div>
+        <label>Additonal Notes</label>
+        <input
+          type="text"
+          name="notes"
+          onChange={handleInputChange}
+          value={inputs.notes}
+          required
+        />
+      </div>
+      <div>
+        <label>Dog Color</label>
+        <input
+          type="text"
+          name="dogColor"
+          onChange={handleInputChange}
+          value={inputs.dogColor}
+          required
+        />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
 export default TestForm;
