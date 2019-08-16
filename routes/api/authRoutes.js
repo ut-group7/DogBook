@@ -17,7 +17,7 @@ router.use(require('express-session')({
   router.use(passport.initialize());
   router.use(passport.session());
   router.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:3000"); 
+    res.header("Access-Control-Allow-Origin", "https://canineconnection.herokuapp.com/"); 
     res.header("Access-Control-Allow-Credentials", true);
     next();
   });
@@ -39,7 +39,7 @@ passport.deserializeUser(function(user, done) {
 passport.use(new Strategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3030/api/auth/google/redirect"
+    callbackURL: "/api/auth/google/redirect"
   },
   function(accessToken, refreshToken, profile, cb) {
     console.log(profile)
@@ -57,7 +57,7 @@ passport.use(new Strategy({
     passport.authenticate('google', { failureRedirect: '/' }),
     function(req, res) {
       // Successful authentication, redirect to profile page.
-      res.redirect('http://localhost:3000/profile');
+      res.redirect('https://canineconnection.herokuapp.com//profile');
       
   });
   
@@ -71,7 +71,7 @@ passport.use(new Strategy({
 
   router.get('/logout', (req, res) => {
     req.session.destroy(err => {
-      res.redirect('http://localhost:3000/')
+      res.redirect('https://canineconnection.herokuapp.com/')
     })
   })
 
