@@ -15,8 +15,18 @@ img {
 }
 
 .myPosts {
+    margin-top: 100px;
     padding-top: 50px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    background-color: white;
+    padding-left: 150px;
+    padding-right: 150px;
+}
 
+.myPosts h1 {
+    font-size: 60px;
+    text-align: center;
+    text-decoration: underline;
+    color: blue;
 }
