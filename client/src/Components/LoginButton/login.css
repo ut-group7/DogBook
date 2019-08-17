@@ -17,3 +17,23 @@
     color: #3d3d3d;
     text-decoration: none;
 }
+
+.logout {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    align-content: center; 
+    box-shadow: none;
+    border-radius: 6px;
+    background-color: rgb(196, 1, 1);
+}
+
+.logout:hover {
+    background-color: rgb(250, 133, 133);
+    color: #3d3d3d;
+    text-decoration: none;
+}

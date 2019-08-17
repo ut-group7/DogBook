@@ -6,6 +6,13 @@ import Login from '../LoginButton/login';
 
 
 const Navbar = props => {
+
+  const divStyle = {
+    width: '30%',
+    height: '1px',
+    paddingTop: '1px'
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
        <div>
@@ -33,10 +40,8 @@ const Navbar = props => {
         </li>
         </ul>
         <form className="form-inline my-2 my-lg-0">
-        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-light my- my-sm-0" type="submit">Search </button>
-        <Login></Login>
         </form>
+        <div style={divStyle}></div>
     </div>
     </nav>
   );
