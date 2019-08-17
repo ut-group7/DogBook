@@ -3,9 +3,10 @@
     padding-top: 0px;
 }
 
-p {
+.mapinfo {
     font-size: 20px;
     font-weight: bold;
+    text-align: center;
 }
 
 h2 {
@@ -15,7 +16,7 @@ h2 {
 
 .display-3 {
     font-size: 3.5rem;
-    font-weight: 200;
+    font-weight: 700;
     line-height: 1.2;
 }
 
