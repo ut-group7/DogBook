@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Card from 'react-bootstrap/Card';
 
 class MyPosts extends React.Component {
     constructor(props){
@@ -32,9 +33,22 @@ class MyPosts extends React.Component {
                 {this.state.response === null ? null : this.state.response[0].posts.map(post => {
                     return (
                         <div>
-                            <h2>{post.dogBreed}</h2>
-                            <h2>{post.reward}</h2>
-                            <h2>{post.notes}</h2>
+                            <Card style={{ width: '18rem', marginLeft: '2rem', marginRight: '2rem', display: 'flex', marginBottom: '20px' }}>
+                                <Card.Body>
+                                    <Card.Title>Breed: {post.dogBreed}</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">Color: {post.dogColor}</Card.Subtitle>
+                                    <Card.Subtitle className="mb-2 text-muted">Size: {post.dogSize}</Card.Subtitle>
+                                    <Card.Text>
+                                        Notes: {post.notes}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        Reward: {post.reward}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        Contact: {post.email}
+                                    </Card.Text>                                    
+                                </Card.Body>
+                            </Card>
                         </div>
                     )
                 })}

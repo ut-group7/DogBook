@@ -36,6 +36,8 @@ img {
     box-shadow: none;
     border-radius: 6px;
     background-color: rgb(196, 1, 1);
+    margin-bottom: 60px;
+    margin-top: 20px;
 }
 
 .logout:hover {
@@ -49,4 +51,5 @@ img {
     text-align: center;
     text-decoration: underline;
     color: blue;
+    margin-bottom: 50px;
 }
