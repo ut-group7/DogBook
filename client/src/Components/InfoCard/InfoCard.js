@@ -7,7 +7,7 @@ const InfoCard = function() {
 
     const fetchData = async () => {
       setisLoading(true);
-      const response = await fetch("http://localhost:3030/api/lostDogs");
+      const response = await fetch("/api/lostDogs");
       const json = await response.json();
       setData(json);
       setisLoading(false);
