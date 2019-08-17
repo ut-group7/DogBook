@@ -1,11 +1,17 @@
 import React from "react";
 import useForm from "../../Utils/useForm";
+import Geolocation from '../location';
 import "./form.css";
 
-const TestForm = () => {
+const TestForm = (props) => {
   const submitForm = e => {
     e.preventDefault();
+    const location = localStorage.getItem('myLocation')
+    inputs.location = location;
+    inputs.user = props.userId;
     console.log(inputs);
+    const url = localStorage.getItem("img");
+    inputs.img = url;
     const options = {
       headers: { "Content-Type": "application/json" },
       method: "POST",
@@ -16,11 +22,12 @@ const TestForm = () => {
       .catch(err => console.log("request failed" + err));
 
     //relocate window
-    window.location.href = "/Lost";
+   window.location.href = "/Lost";
   };
-  const { inputs, handleInputChange, handleSubmit } = useForm();
+  const { inputs, handleInputChange, handleSubmit, uploadFile } = useForm();
 
   return (
+    <div>
     <form className="submitForm" onSubmit={submitForm}>
       <div>
         <label>Dog Breed</label>
@@ -90,9 +97,18 @@ const TestForm = () => {
           required
         />
       </div>
-
+      <div>
+        <input
+          type="file"
+          name="img"
+          onChange={uploadFile}
+        />
+      </div>
+      <h2>Mark your pets last seen location below</h2>
+      <Geolocation />
       <button type="submit">Submit</button>
     </form>
+    </div>
   );
 };
 export default TestForm;

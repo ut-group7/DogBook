@@ -1,6 +1,5 @@
 import React from "react";
-import Post from "./Post";
-import Login from "../../Components/login";
+import LoginBox from '../../Components/LoginBox/LoginBox';
 import TestForm from "../../Components/TestForm.js/TestForm";
 
 class PostPage extends React.Component {
@@ -29,28 +28,27 @@ class PostPage extends React.Component {
     this.authTest();
   }
 
-  responseHandler() {
-    if (this.state.response.error) {
-      return <Login />;
-    } else {
-      const userProp = this.state.response._id
-        ? this.state.response._id
-        : "none";
-      return (
-        // <Post userId={userProp}></Post>
-        <TestForm userId={userProp} />
-      );
-    }
-  }
+    responseHandler() {
+        if(this.state.response.error){
+            return(<LoginBox />)
+        }else{
+            const userProp = this.state.response._id ? this.state.response._id : 'none';
+            return(
+              <TestForm userId={userProp} />
+            )
+        }
+    };
+    
+    
+    render(){
 
-  render() {
-    return (
-      <div>
-        {this.state.isLoading ? <h1>Loading</h1> : null}
-        {this.state.response === null ? <Login /> : this.responseHandler()}
-      </div>
-    );
-  }
+        return(
+            <div>
+                { this.state.isLoading ? <h1>Loading</h1> : null }
+                { this.state.response === null ? <LoginBox /> : this.responseHandler() }
+            </div>
+        )
+    }
 }
 
 export default PostPage;

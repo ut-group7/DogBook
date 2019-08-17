@@ -1,7 +1,7 @@
 import React from 'react';
-import Login from '../../Components/login';
-import Post from '../Post/Post';
+import Login from '../../Components/LoginButton/login';
 import MyPosts from '../../Components/MyPosts/myPosts';
+import LoginBox from '../../Components/LoginBox/LoginBox';
 import TestForm from '../../Components/TestForm.js/TestForm';
 require('./profile.css');
 
@@ -30,16 +30,16 @@ class Profile extends React.Component {
 
     responseHandler() {
         if(this.state.response.error){
-            return(<Login></Login>)
+            return(<LoginBox/>)
         }else{
             return(
                 <div className="col profile">
                     <img className="avatar" src={'https://png.pngtree.com/svg/20161230/fc951b209c.svg'} alt="avatar"></img>
                     <h1>{`Welcome, ${this.state.response.name}!`}</h1>
-                    <a type='button' className="btn btn-danger" href='/api/auth/logout'>logout</a>
-                    <div className="row myPosts">
-                        <TestForm userId={this.state.response._id}></TestForm>
-                        <h1>My Posts</h1>
+                    <a className="logout" href='/api/auth/logout'>Logout</a>
+                    <TestForm userId={this.state.response._id}></TestForm>
+                    <div className="myPosts">
+                        <h1>MY POSTS</h1>
                         <MyPosts userId={this.state.response._id} />
                     </div>
                     
@@ -53,7 +53,6 @@ class Profile extends React.Component {
 
         return(
             <div>
-                {/*<button className="btn btn-primary" onClick={this.authTest}>Test Auth</button>*/}
                 { this.state.isLoading ? <h1>Loading</h1> : null }
                 { this.state.response === null ? <Login></Login> : this.responseHandler() }
             </div>
