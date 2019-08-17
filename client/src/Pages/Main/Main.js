@@ -33,9 +33,7 @@ const Main = () => {
             </p>
 
           <MDBRow>
-            <MDBCol>
-              <InfoCard />
-            </MDBCol>
+            <InfoCard />
          </MDBRow>
         </MDBJumbotron>
         </MDBCol>

@@ -22,7 +22,7 @@ const InfoCard = function() {
     const rowStyle = {
         display: 'flex',
         flexDirection: 'row',
-        xOverflow: 'scroll',
+        overflowX: 'scroll',
     };
 
     if (isLoading) {
@@ -37,9 +37,9 @@ const InfoCard = function() {
     <div style={rowStyle}>
     {data.map(post => {
         return (
-            <Card style={{ width: '18rem', marginLeft: '2rem', marginRight: '2rem', display: 'flex' }}>
+            <Card style={{ minWidth: '18rem', marginLeft: '2rem', marginRight: '2rem', marginBottom: '1rem', display: 'flex' }}>
                 <Card.Body>
-                    <Card.Img variant='top' style={{ height: '200px', width: '200px' }} src={post.img}></Card.Img>
+                    <Card.Img variant='top' style={{ height: '200px', width: '200px', display: 'flex' }} src={post.img}></Card.Img>
                     <Card.Title>Breed: {post.dogBreed}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Color: {post.dogColor}</Card.Subtitle>
                     <Card.Subtitle className="mb-2 text-muted">Size: {post.dogSize}</Card.Subtitle>
