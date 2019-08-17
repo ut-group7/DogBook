@@ -7,7 +7,7 @@ const TestForm = (props) => {
   const submitForm = e => {
     e.preventDefault();
     const location = localStorage.getItem('myLocation')
-    inputs.location = location;
+    inputs.location = JSON.parse(location);
     inputs.user = props.userId;
     console.log(inputs);
     const url = localStorage.getItem("img");
