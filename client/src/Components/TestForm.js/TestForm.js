@@ -10,6 +10,8 @@ const TestForm = (props) => {
     inputs.location = location;
     inputs.user = props.userId;
     console.log(inputs);
+    const url = localStorage.getItem("img");
+    inputs.img = url;
     const options = {
       headers: { "Content-Type": "application/json" },
       method: "POST",
@@ -20,9 +22,9 @@ const TestForm = (props) => {
       .catch(err => console.log("request failed" + err));
 
     //relocate window
-    window.location.href = "/Lost";
+   window.location.href = "/Lost";
   };
-  const { inputs, handleInputChange, handleSubmit } = useForm();
+  const { inputs, handleInputChange, handleSubmit, uploadFile } = useForm();
 
   return (
     <div>
@@ -93,6 +95,13 @@ const TestForm = (props) => {
           onChange={handleInputChange}
           value={inputs.dogColor}
           required
+        />
+      </div>
+      <div>
+        <input
+          type="file"
+          name="img"
+          onChange={uploadFile}
         />
       </div>
       <h2>Mark your pets last seen location below</h2>
